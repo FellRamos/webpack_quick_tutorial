@@ -3,3 +3,8 @@
 Quick tutorial of webpack from youtube channel TraversyMedia (check it!)
 https://www.youtube.com/watch?v=lziuNMk_8eQ
 
+## Tips
+
+- Because the version of webpack is now diferent, it's needed to install also webpack-cli. I installed globally (both webpack and webpack-cli) and it works for me, but some people just installed locally as a dev-dependency (and it works also).
+
+- To create the bundle.js from app.js with webpack, use command webpack --mode=development app.js -o bundle.js. It works without --mode=development, but you get a warning.
