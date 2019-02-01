@@ -160,7 +160,7 @@ eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader/dis
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("__webpack_require__(/*! ../css/style.css */ \"./src/css/style.css\");\r\nlet people = __webpack_require__(/*! ./people.js */ \"./src/js/people.js\");\r\nlet $ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\r\n\r\n\r\n$.each(people, (key, value) => {\r\n  $('body').append('<h1>' + people[key].name + '</h1>');\r\n})\r\n\r\nconsole.log(people[0].name);\n\n//# sourceURL=webpack:///./src/js/app.js?");
+eval("__webpack_require__(/*! ../css/style.css */ \"./src/css/style.css\");\n\nvar people = __webpack_require__(/*! ./people.js */ \"./src/js/people.js\");\n\nvar $ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n\n$.each(people, function (key, value) {\n  $('body').append('<h1>' + people[key].name + '</h1>');\n});\nconsole.log(people[0].name);\n\n//# sourceURL=webpack:///./src/js/app.js?");
 
 /***/ }),
 
@@ -171,7 +171,7 @@ eval("__webpack_require__(/*! ../css/style.css */ \"./src/css/style.css\");\r\nl
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("/*\r\nfunction getHello(){\r\n  return \"Hello there!\"\r\n}\r\n*/\r\n\r\n\r\nlet people = [\r\n  {name: \"John Doe\"},\r\n  {name: \"Matumbina\"},\r\n  {name: \"Tibursio\"}\r\n]\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nmodule.exports = people;\n\n//# sourceURL=webpack:///./src/js/people.js?");
+eval("/*\r\nfunction getHello(){\r\n  return \"Hello there!\"\r\n}\r\n*/\nvar people = [{\n  name: \"John Doe\"\n}, {\n  name: \"Matumbina\"\n}, {\n  name: \"Tibursio\"\n}];\nmodule.exports = people;\n\n//# sourceURL=webpack:///./src/js/people.js?");
 
 /***/ })
 
