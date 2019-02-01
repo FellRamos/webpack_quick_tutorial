@@ -4,7 +4,8 @@
   "description": "simple webpack app",
   "main": "app.js",
   "scripts": {
-    "build": "webpack"
+    "start": "webpack-dev-server --entry ./src/js/app.js --output-filename ./dist/bundle.js",
+    "build": "webpack --mode=development"
   },
   "author": "Fell",
   "license": "ISC",
