@@ -8,26 +8,33 @@ Quick tutorial of webpack from youtube channel [Traversy Media](https://www.yout
 
 - To create the bundle.js from app.js with webpack, use command **webpack --mode=development app.js -o bundle.js**. It works without **--mode=development**, but you get a warning. To keep webpack running and waiting for changes on your files, just use **webpack --mode=development app.js -o bundle.js --watch**
 
-- On the config file, the syntaxe is a bit diferent to import the loaders:
+- The config file was adpated, as now the syntaxe is a little different. Check [Webpack](https://webpack.js.org/loaders/babel-loader/) website, section loaders, to see how to install and use each one of them!
     ```javascript
-    module.exports = {
-      entry: './src/js/app.js',
-      output: {
-        path: __dirname+'/dist',
-        filename: 'bundle.js'
-      },
-      module: {
-        rules: [
-          {
-            test: /\.css$/,
-            use: [
-              {loader: 'style-loader'},
-              {loader: 'css-loader'}
+        module.exports = {
+          entry: './src/js/app.js',
+          output: {
+            path: __dirname+'/dist',
+            filename: 'bundle.js'
+          },
+          module: {
+            rules: [
+              {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+              },
+              {
+                test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                  loader: 'babel-loader',
+                  options: {
+                    presets: ['@babel/preset-env']
+                  }
+                }
+              }
             ]
           }
-        ]
-      }
-    }
+        }
     ```
 
 ## Notes
